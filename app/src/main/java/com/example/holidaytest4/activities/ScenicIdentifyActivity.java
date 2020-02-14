@@ -223,7 +223,7 @@ public class ScenicIdentifyActivity extends AppCompatActivity {
             imageUri = Uri.fromFile(outputImage);
         } else {
             //Android 7.0系统开始 使用本地真实的Uri路径不安全,使用FileProvider封装共享Uri
-            //参数二:fileprovider绝对路径 com.dyb.testcamerademo：项目包名
+            //参数二:fileprovider绝对路径 ：项目包名
             imageUri = FileProvider.getUriForFile(ScenicIdentifyActivity.this, "com.example.holidaytest4", outputImage);
         }
         // 启动相机程序
