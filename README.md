@@ -29,10 +29,7 @@
 **调用摄像机继续拍照上传，有加载效果结合AlertDialog使用（功能不完全，目前只有加载效果），室内定位会申请蓝牙权限，但并无实际功能，会显示一张图和一个小动画
 结合AnimatorSet使用**
 ### 4.3 反馈FeedbackActivity
-**对景区的反馈，评价等等，填写后上传（未实现）**
+**对景区的反馈，评价等等，填写后上传（上传未实现）**
 ### 4.4 路线规划
 **参考高德API，但并非是真正的导航，是我记录经纬度以及调用polyline画线，只画了4条路线**
-![1](https://github.com/DragonLi-creator/WisdomTravel/tree/master/picture/4.png)
-![1](https://github.com/DragonLi-creator/WisdomTravel/tree/master/picture/4.png)
-![1](https://github.com/DragonLi-creator/WisdomTravel/tree/master/picture/4.png)
-![1](https://github.com/DragonLi-creator/WisdomTravel/tree/master/picture/4.png)
+**地图界面有实时定位按钮，可跳转至用户的位置并显示标志，同时具备放大与缩小功能**
