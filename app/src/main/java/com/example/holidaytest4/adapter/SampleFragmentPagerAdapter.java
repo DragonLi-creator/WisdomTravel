@@ -13,10 +13,6 @@ import com.example.holidaytest4.fragment.FoundFragment;
 import com.example.holidaytest4.fragment.HomeFragment;
 import com.example.holidaytest4.fragment.MineFragment;
 
-/**
- * Created by 0xLLLLH on 16-5-16.
- *
- */
 public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 3;
     private String tabTitles[] = new String[]{"首页","目的地","我的"};
