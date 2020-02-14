@@ -33,3 +33,19 @@
 ### 4.4 路线规划
 **参考高德API，但并非是真正的导航，是我记录经纬度以及调用polyline画线，只画了4条路线**
 **地图界面有实时定位按钮，可跳转至用户的位置并显示标志，同时具备放大与缩小功能**
+## 依赖库
+implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'org.litepal.android:core:2.0.0'
+    implementation 'com.android.support:design:29.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation files('libs/AMap3DMap_6.8.0_AMapNavi_6.7.0_AMapSearch_6.5.0_AMapLocation_4.5.1_20190402.jar')
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:design:29.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
