@@ -32,4 +32,7 @@
 **对景区的反馈，评价等等，填写后上传（未实现）**
 ### 4.4 路线规划
 **参考高德API，但并非是真正的导航，是我记录经纬度以及调用polyline画线，只画了4条路线**
-![1]()
+![1](https://github.com/DragonLi-creator/WisdomTravel/tree/master/picture/4.png)
+![1](https://github.com/DragonLi-creator/WisdomTravel/tree/master/picture/4.png)
+![1](https://github.com/DragonLi-creator/WisdomTravel/tree/master/picture/4.png)
+![1](https://github.com/DragonLi-creator/WisdomTravel/tree/master/picture/4.png)
