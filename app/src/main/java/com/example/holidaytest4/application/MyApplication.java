@@ -1,0 +1,27 @@
+package com.example.holidaytest4.application;
+
+import android.content.Context;
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
+import org.litepal.LitePal;
+
+/**
+ * 全局获取当前app的Context的方法
+ */
+public class MyApplication extends MultiDexApplication {
+
+    private static Context context;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        context = getApplicationContext();
+        //初始化LitePal,让其在内部自动获取到当前的Context
+        LitePal.initialize(context);
+        MultiDex.install(this);
+    }
+
+    public static Context getContext(){
+        return context;
+    }
+}

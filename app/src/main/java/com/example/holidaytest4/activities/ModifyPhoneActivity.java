@@ -1,0 +1,98 @@
+package com.example.holidaytest4.activities;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import com.example.holidaytest4.R;
+import com.example.holidaytest4.beans.Visitor;
+import com.example.holidaytest4.utils.LoginRegisterUtils;
+import com.example.holidaytest4.utils.UiUtils;
+import org.litepal.LitePal;
+import java.util.List;
+
+public class ModifyPhoneActivity extends AppCompatActivity {
+
+    private EditText modify_phone_et;
+    //当前用户登入的账号
+    private String userId;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.modify_phone_layout);
+        //初始化View
+        initView();
+        //获取当前用户登入的账号
+        getUserId();
+    }
+
+    /**
+     * 初始化View
+     */
+    private void initView() {
+        //设置toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar_modify_phone);
+        setSupportActionBar(toolbar);
+        modify_phone_et = findViewById(R.id.modify_phone_et);
+        LoginRegisterUtils.setEditTextInhibitInputSpace(modify_phone_et);
+        //自动弹出输入法
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        //标题栏返回键
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        //将状态栏字体变为黑色
+        UiUtils.changeStatusBarTextImgColor(this,true);
+    }
+
+    private void getUserId() {
+        Intent intent = getIntent();
+        if (intent != null) {
+            userId = intent.getStringExtra("userId");
+        }
+    }
+
+    //反射右上角菜单项
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.modify_info, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //点击菜单项
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.modify_save:
+                String phone = modify_phone_et.getText().toString();
+                if (!phone.isEmpty()) {
+                    if (phone.length() == 11) {
+                        List<Visitor> visitors = LitePal.where("userId = ?", userId).find(Visitor.class);
+                        for (Visitor visitor : visitors) {
+                            //更改电话
+                            visitor.setPhone(phone);
+                            visitor.save();
+                        }
+                        finish();
+                    } else {
+                        Toast.makeText(this, "电话号码格式不正确", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, "电话号码不能为空", Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

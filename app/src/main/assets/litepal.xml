@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<litepal>
+
+    <!--数据库名-->
+    <dbname value="WisdomTravel"/>
+    <!--版本号-->
+    <version value="10"/>
+
+    <!--用于指定所有映射集合-->
+    <list>
+        <mapping class="com.example.holidaytest4.beans.SearchHistoryInfo"/>
+        <mapping class="com.example.holidaytest4.beans.Visitor"/>
+    </list>
+
+</litepal>

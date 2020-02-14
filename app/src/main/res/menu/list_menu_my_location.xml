@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/gmd_my_location"
+        android:title="光明顶" />
+
+    <item
+        android:id="@+id/yxt_my_location"
+        android:title="一线天" />
+
+
+</menu>
